@@ -1,11 +1,11 @@
 # Site settings
-title: Hux Blog
-SEOTitle: 黄玄的博客 | Hux Blog
+title: 刘哥的技术轮子
+SEOTitle: 刘哥的博客 | liuzhixing Blog
 header-img: img/home-bg.jpg
-email: huxpro@gmail.com
-description: "关于程序与设计、黑客与画家 | 黄玄，Web & Mobile Lover，Software Engineer，UX Designer | 这里是 @Hux黄玄 的个人博客，与你一起发现更大的世界。"
-keyword: "黄玄, Hux黄玄, Hux, 鬼栈, huxpro, @huxpro, 黄玄的博客, Hux Blog, 博客, 个人网站, 互联网, Web, JavaScript, 前端, 设计"
-url: "https://huangxuan.me"              # your host, for absolute URL
+email: a576177775@gmail.com
+description: "关于程序与设计 | 刘哥，Web & BigData Lover，Software Engineer | 这里是 @刘哥 的个人博客，与你一起发现更大的世界。"
+keyword: "刘哥, liugechiji, 博客, 个人网站, 互联网, Web, Java, 大数据"
+url: "https://liuzhixing.cn"              # your host, for absolute URL
 baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
 
 # Publish posts or collection documents with a future date.
