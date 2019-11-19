@@ -55,7 +55,8 @@ tags:
 	- 3.3 进行域名解析：在管理平台中，进行相关的域名解析操作，如图：![](http://liuzhixing.cn/img/doc-pic/1.The%20new%20begining/3.3.png)
 	- 3.4 修改Github配置：在Repositories项目，选择Setting，修改Custom Domain信息
 	 ![](http://liuzhixing.cn/img/doc-pic/1.The%20new%20begining/3.4.png)
-- 4. 直接访问liuzhixing.cn，就可以直接看到自己的博客项目了。
+
+- 4.直接访问liuzhixing.cn，就可以直接访问到自己的博客项目，配置成功。
 
 
 ## 后记
