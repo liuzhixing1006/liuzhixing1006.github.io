@@ -1,10 +1,10 @@
 # Site settings
-title: 刘哥的技术轮子
-SEOTitle: 刘哥的博客 | liuzhixing Blog
+title: 刘志行的博客
+SEOTitle: 刘志行的博客 | liuzhixing Blog
 header-img: img/home-bg.jpg
 email: a576177775@gmail.com
-description: "关于程序与设计 | 刘哥，Web & BigData Lover，Software Engineer | 这里是 @刘哥 的个人博客，与你一起发现更大的世界。"
-keyword: "刘哥, liuzhixing, 博客, 个人网站, 互联网, Web, Java, 大数据"
+description: "关于程序与设计 | 刘志行，Web & BigData Lover，Software Engineer | 这里是 @刘志行 的个人博客，与你一起发现更大的世界。"
+keyword: "刘志行, liuzhixing, 博客, 个人网站, 互联网, Web, Java, 大数据"
 url: "liuzhixing.cn"              # your host, for absolute URL
 baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
 
@@ -78,14 +78,14 @@ ga_domain: liuzhixing.cn
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "For the next quantum leap<br>离开世界之前，一切都是过程"
-sidebar-avatar: /img/avatar-hux-ny.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-about-description: "精彩不亮丽 起落是无常"
+sidebar-avatar: /img/avatar-liuzhixing-ny.jpeg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
 # Featured Tags
-featured-tags: true                     # whether or not using Feature-Tags
-featured-condition-size: 1              # A tag will be featured if the size of it is more than this condition value
+featured-tags: true                     # 是否使用首页标签
+featured-condition-size: 1              # 相同标签数量大于这个数，才会出现在首页
 
 
 
@@ -101,36 +101,15 @@ page-mathjax: false
 
 
 # Friends
-# friends: [
-#     {
-#     #     title: "Su",
-#     #     href: "http://su.gallery/"
-#     # },{
-#         title: "乱序",
-#         href: "http://mida.re/"
-#     },{
-#         title: "Sherry Wu",
-#         href: "https://xuechundesign.github.io"
-#     },{
-#         title: "Luke 的自留地",
-#         href: "http://hmqk1995.github.io"
-#     },{
-#         title: "Ebn's Blog",
-#         href: "http://ebnbin.com/"
-#     },{
-#         title: "SmdCn's Blog",
-#         href: "http://blog.smdcn.net"
-#     },{
-#         title: "JiyinYiyong",
-#         href: "http://tiye.me/"
-#     },{
-#         title: "David's Game",
-#         href: "https://www.ruoyaowu.com/"
-#     },{
-#         title: "DHong Say",
-#         href: "http://dhong.co"
-#     },{
-#         title: "尹峰以为",
-#         href: "http://ingf.github.io/"
-#     }
-# ]
+friends: [
+    {
+        title: "简书",
+        href: "https://www.jianshu.com/p/c1d219b99122"
+    },{
+        title: "Apple",
+        href: "https://apple.com"
+    },{
+        title: "Switch",
+        href: "https://www.nintendo.com.hk/index.html"
+    }
+]
