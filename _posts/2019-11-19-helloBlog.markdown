@@ -52,9 +52,9 @@ tags:
 	- 3.1  买一个域名：可以去阿里云/腾讯云的域名服务，根据自己的喜好选一个域名，我这个在腾讯云买的，挺便宜，12元一年拿下。
 	https://dnspod.cloud.tencent.com/
 	- 3.2 Ping一下github名称.github.io这个域名，看一下其具体的ip地址，我这边获得的是185.199.109.153，进入第三步。
-	- 3.3 进行域名解析：在管理平台中，进行相关的域名解析操作，如图：![](../img/doc-pic/1.The new begining/3.3.png)
+	- 3.3 进行域名解析：在管理平台中，进行相关的域名解析操作，如图：![](http://liuzhixing.cn/img/doc-pic/1.The%20new%20begining/3.3.png)
 	- 3.4 修改Github配置：在Repositories项目，选择Setting，修改Custom Domain信息
-	 ![](../img/doc-pic/1.The new begining/3.4.png)
+	 ![](http://liuzhixing.cn/img/doc-pic/1.The%20new%20begining/3.4.png)
 - 4. 直接访问liuzhixing.cn，就可以直接看到自己的博客项目了。
 
 
