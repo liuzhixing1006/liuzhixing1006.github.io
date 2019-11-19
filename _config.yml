@@ -5,7 +5,7 @@ header-img: img/home-bg.jpg
 email: a576177775@gmail.com
 description: "刘哥的技术轮子 | liuzhixing，Java & BigData Lover，Software Engineer | 这里是 @liuzhixing的个人博客，与你一起发现更大的世界。"
 keyword: "刘哥, liuzhixing, @liuzhixing, 刘哥的博客, Liuzhixing Blog, 博客, 个人网站, 互联网, Java, 大数据, 监控系统"
-url: "https://liuzhixing.cn"              # your host, for absolute URL
+url: "liuzhixing.cn"              # your host, for absolute URL
 baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
 
 # Publish posts or collection documents with a future date.
