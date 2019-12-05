@@ -11,23 +11,24 @@ tags:
     - Flink
 ---
 
-### 什么是State
-State是流计算过程中生成的中间计算结果和元数据
-比如：
+> “如果要理解CheckPoint，那么必须先理解State的知识”
+
+### 那么，什么是State？
+State是流计算过程中生成的中间计算结果和元数据，比如：
 - 1.消费Kafka的时候中间的offset信息
 - 2.对一个实时流进行实时累加操作，reduce函数生成的累加值等等中间信息。
 
 ### State的类型和存储方式
 **State主要分成两类：**
--    KeyedState：主要是在对流进行KeyBy操作的时候，key的值就是一个字节数组，每个Key都有属于自己的State，之间的State是不可见的。
--    OperatorState：Flink自带的SourceConnector实现中就会使用到OperatorState记录数据读取的offset。
+-    KeyedState：主要是在对流进行KeyBy操作的时候，每个Key的Value值就是一个字节数组，每个Key都有属于自己的State，并且不同Key之间的State是彼此不可见的。
+-    OperatorState：Flink自带的SourceConnector实现中，就会使用到OperatorState来记录数据读取到的offset信息。
 
 **State存储方式：**
 -  内存HeapStateBackend --只能在Debug模式使用，不建议在生产模式使用。
-    1. MemoryStateBackend：State数据保存在java堆内存中，执行CheckPoint时，会将内存中的State直接传送给JobManager。
-    2. FsStateBackend：CheckPoint数据写入到文件中，将文件路径传递给JobManager。
+    1. MemoryStateBackend：State数据保存在java堆内存中，执行CheckPoint时，会将内存中的State直接传送给JobManager。（存在Task和JobManager直接连接的开销）
+    2. FsStateBackend：CheckPoint数据写入到文件中，将文件路径传递给JobManager。（如果本地文件数据丢失，那么整个State信息也丢失，没有实现HA）
 - 基于RockDb的RockDBStateBackend --本地文件 + 异步HDFS持久化，建议在生产环境中使用
-    - 它会在本地文件系统中维护状态，并且将State直接写入本地RocksDb中，与此同时需要配置一个远端文件系统，在做checkpoint的同时，会将数据也写一份在FlieSystem（通常是HDFS）中保证高可用，在failOver的时候从FileSystem恢复到本地。
+    - RockDBStateBackend会在本地文件系统中维护State，并且将State直接写入本地RocksDb中，与此同时还需要配置一个远端文件系统，在做Checkpoint的同时，会将数据也写一份在FlieSystem（通常是HDFS）中保证高可用，在本地failOver的时候从FileSystem恢复到本地。
 
 
 ### CheckPoint原理
@@ -51,7 +52,6 @@ CheckPoint是通过JobManager进行定时State存储产生全局性快照的流�
     2. 当数据存储到RockDBStateBackend持久性存储（HDFS）后，会向存储的文件指针记录在Master（JobManager）中。
     
     
-
 ### 故障恢复过程
     通过JobManager读取当前错误最近一次的全局SnapShot的文件指针，从fileSystem（HDFS）中获取到具体文件信息，进行状态的恢复回滚。
     
