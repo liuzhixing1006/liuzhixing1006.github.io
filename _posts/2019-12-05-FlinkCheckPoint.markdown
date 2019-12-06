@@ -35,19 +35,19 @@ State是流计算过程中生成的中间计算结果和元数据，比如：
 CheckPoint是通过JobManager进行定时State存储产生全局性快照的流程。
 其中Flink的检查机制实现了标准的Chandy-Lamport算法，用于实现分布式快照，在分布式快照当中有一个核心的元素：Barrier。
 - **单流Barrier：**
-   ![image](http://note.youdao.com/yws/res/1846/520DA9DD7C4348098E19A8267088DB31)
+   ![image](http://liuzhixing.cn/img/doc-pic/2.FlinkStateAndCheckPoint/1.png)
     
     1. Barrier通过JobManager下发到Source，严格遵循顺序。
     2. 每个Barrier携带这个一个ID，用于对无限长数据进行切分成一个个记录集合。
     3. 不会中断流处理，轻量级。
 
 - **多流Barrier：**
-    ![image](http://note.youdao.com/yws/res/1861/EC65B7B817484251AD13B6F1C3B36D51)
+    ![image](http://liuzhixing.cn/img/doc-pic/2.FlinkStateAndCheckPoint/2.png)
     1. 不止一个输入流流经Operator，需要进行Barrier的对齐操作。
     2. 可以看到超前的Barrier数据会放置在inputBuffer中，等待另一输入流的Barrier到达之后，才进行数据处理操作。
    
 - **有状态Operator操作:**
-    ![image](http://note.youdao.com/yws/res/1865/1F232CEE8838435198C9781C04CE728F)
+    ![image](http://liuzhixing.cn/img/doc-pic/2.FlinkStateAndCheckPoint/3.png)
     1. 有状态的Operator在接受到Barrier后会进行State SnapShot的存储操作，由于SnapShot的状态可能会很大，因此选择使用RockDBStateBackend。Flink通过定时保证数据一致性，异步将本地存储的状态指向持久性存储（RockDB、HDFS等）保证高可用。
     2. 当数据存储到RockDBStateBackend持久性存储（HDFS）后，会向存储的文件指针记录在Master（JobManager）中。
     
