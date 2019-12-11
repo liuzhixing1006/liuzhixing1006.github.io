@@ -16,7 +16,8 @@ tags:
 ####  1.Flink简介
 简单来说，Flink 是一个分布式的流处理框架，它能够对有界和无界的数据流进行高效的处理。Flink 的核心是流处理，当然它也能支持批处理，Flink 将批处理看成是流处理的一种特殊情况，即数据流是有明确界限的。这和 Spark Streaming 的思想是完全相反，Spark Streaming 的核心是批处理，它将流处理看成是批处理的一种特殊情况， 即把数据流进行极小粒度的拆分，拆分为多个微批处理。
 
->Flink 有界数据流和无界数据流：
+> Flink 有界数据流和无界数据流：
+
 ![image](http://note.youdao.com/yws/res/1940/30A88E29B03A44AAAFD471111C8B7B60)
 
 Spark Streaming数据流的拆分：
