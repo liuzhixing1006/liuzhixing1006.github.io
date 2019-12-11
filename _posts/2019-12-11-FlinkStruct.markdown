@@ -59,6 +59,7 @@ Spark Streaming数据流的拆分：
 
 #### 3.2 Task & SubTasks
 > TaskManager可以执行的是SubTask，而不是Task。
+
 - Task：Flink在执行作业的时候，会将所有可以链接的操作链接在一起，这就叫做Task。这样做的目的就是减少线程间和网络间的交换，在降低延时的同时可以提高作业整体的吞吐量，但是不是所有的Operator都可以进行链接，如Keyby操作就会导致网络shuffle和重分区，因此需要将它独立成一个Task。因此，Task就是一个可以链接的最小的操作链。![image](http://liuzhixing.cn/img/doc-pic/3.FlinkStruct/5.png)
 - SubTask：一个Task根据并行度，可以分为多个SubTask，如上图，Source&Map、Keyby都是2个并行度，Sink是1个并行度，那么虽然整体上有3个Task，实际上是有5个SubTask：2 + 2 + 1。JobManager负责定义和拆分Task，并将其SubTask交给TaskManager进行执行。
 
